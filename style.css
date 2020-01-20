@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+.container {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    width: 500px;
+    height: 250px;
+}
+
+.contents {
+    margin-top: 25px;
+}
+
+#lbl,
+#lbl1 {
+    color: dodgerblue;
+    margin-top: 5px;
+    position: absolute;
+    padding-left: 30px;
+    font-size: 20px;
+}
+
+#email,
+#password {
+    margin-left: 30px;
+    margin-top: 15px;
+    width: 80%;
+    height: 30px;
+    text-indent: 15px;
+}
+
+ ::-webkit-input-placeholder {
+    font-size: 15px;
+}
+
+i.fa {
+    font-size: 25px;
+    position: absolute;
+    left: 400px;
+    top: 63px;
+}
+
+#success,
+#success1 {
+    color: green;
+    display: none;
+}
+
+#error,
+#error1 {
+    color: red;
+    display: none;
+}
+
+#warning,
+#warning1 {
+    color: red;
+    display: none;
+}
+
+span#span1,
+#span11 {
+    font-size: 13px;
+    margin-left: 45px;
+    margin-top: 5px;
+    color: red;
+    font-weight: bold;
+    display: none;
+}
+
+span#span2,
+#span22 {
+    font-size: 13px;
+    position: absolute;
+    padding-top: 5px;
+    padding-left: 45px;
+    left: 0px;
+    color: red;
+    font-weight: bold;
+    display: none;
+}

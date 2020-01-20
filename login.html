@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-3.3.7/docs/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-3.3.7/docs/dist/js/bootstrap.min.js">
+
+    <script src="js/jquery-1.11.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <body>
+        <input type="text" placeholder="username" id="name1" required><br><br>
+        <input type="email" placeholder="email-id" id="name1" required><br><br>
+        <input type="password" placeholder="password" id="name" required><br><br>
+        <input type="checkbox" id="ch">show password<br><br>
+        <button type="button" class="btn btn-success" id="btn" onclick="signin();">Sign-In</button>
+    </body>
+</head>
+<script>
+    $("#ch").click(function() {
+        if ($(this).prop('checked')) {
+            $("#name").attr("type", "text");
+        } else {
+            $("#name").attr("type", "password");
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-3.3.7/docs/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-3.3.7/docs/dist/js/bootstrap.min.js">
+
+    <script src="js/jquery-1.11.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <head>
+
+    </head><br><br><br><br><br><br><br>
+    <center>
+
+
+        <body>
+
+            Chose Username:
+            <input type="text" class="form_text" id="form_username" required>
+
+            <span class="error_form" id="username_error_message"></span>
+            <br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Password:
+            <input type="password" class="form_text" id="form_password" required>
+            <span class="error_form" id="password_error_message"></span><br><br> Retype-Password:
+            <input type="password" class="form_text" id="form_password1" required>
+            <span class="error_form" id="retype_password_error_message"></span>
+            <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email-Id:
+            <input type="email" class="form_text" id="form_email" required>
+            <span class="error_form" id="email_error_message"></span>
+            <!--  <input type="password" placeholder="email" id="name" required><br><br><br>-->
+
+            <!-- <input type="checkbox" id="ch">show password<br><br>--><br><br><br>
+            <button type="button" class="btn btn-success" id="btn" onclick="signin();">Create account</button>
+        </body>
+        </fieldset>
+    </center>
+</head>
+<script>
+    $(function() {
+        $("#username_error_message").hide();
+        $("#password_error_message").hide();
+        $("#retype_password_error_message").hide();
+        $("#email_error_message").hide();
+        var error_username = false;
+        var error_password = false;
+        var error_retype_password = false;
+        var error_email = false;
+        $("#form_username").focusout(function() {
+            check_username();
+        });
+
+        $("#form_password").focusout(function() {
+            check_password();
+
+
+        });
+        $("#form_password1").focusout(function() {
+            checkPasswordMatch();
+
+
+        });
+        $("#form_email").focusout(function() {
+            check_email();
+
+
+        });
+    });
+
+    function check_username() {
+
+        var username_length = $("#form_username").val().length;
+
+        if (username_length < 5 || username_length > 20) {
+            $("#username_error_message").html("Should be between 5-20 characters");
+            $("#username_error_message").show();
+            error_username = true;
+        } else {
+            $("#username_error_message").hide();
+        }
+
+    }
+
+
+    function check_password() {
+
+        var password_length = $("#form_password").val().length;
+
+        if (password_length < 8 || password_length > 20) {
+            $("#password_error_message").html("Should contain 8 characters");
+            $("#password_error_message").show();
+            error_password = true;
+        } else {
+            $("#password_error_message").hide();
+        }
+
+    }
+
+    function checkPasswordMatch() {
+        var password = $("#form_password").val();
+        var confirmPassword = $("#form_password1").val();
+
+        if (password != confirmPassword) {
+            $("#retype_password_error_message").html("Passwords do not match!");
+            $("#retype_password_error_message").show();
+            error_retype_password = true;
+        } else {
+            $("#password_error_message").hide();
+        }
+    }
+
+    function check_email() {
+        var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+        if (pattern.test($("#form_email").val())) {
+            $("#email_error_message").hide();
+        } else {
+            $("#email_error_message").html("Invalid email address");
+            $("#email_error_message").show();
+            error_mail = true;
+        }
+    }
+</script>
+
+</html>

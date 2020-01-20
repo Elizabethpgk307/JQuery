@@ -1,0 +1,31 @@
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="bootstrap-3.3.7/docs/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap-3.3.7/docs/dist/js/bootstrap.min.js">
+
+<script src="js/jquery-1.11.0.js"></script>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+
+    <input type="password" name="player_password" id="pass_log_id" />
+
+    <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>
+
+    <script>
+        $("body").on('click', '.toggle-password', function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+
+            var input = $("#pass_log_id").attr("type");
+
+            if (input.attr("type") === "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    </script>
+</head>
+
+</html>

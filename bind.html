@@ -1,0 +1,57 @@
+<html>
+<script src="js/jquery-1.11.0.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="bootstrap-3.3.7/docs/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap-3.3.7/docs/dist/js/bootstrap.min.js">
+
+<head>
+
+    <body>
+        <center>
+
+            <h3>Value of A:</h3><input type="text" id="a"><br><br>
+            <h3>Value of B:</h3><input type="text" id="b"><br><br>
+            <button type="btn" class="btn btn-success" id="btn">Add</button>
+            <p id="out"></p>
+        </center>
+    </body>
+</head>
+<script>
+    $(document).ready(function() {
+        $("#btn").bind('click', add);
+        $("#a").bind("keyup", ch),
+            $("#b").bind("keyup", ch1)
+            .bind("blur", blur);
+        $("#a").bind("focus", focus);
+        $("#b").bind("focus", focus1);
+    });
+
+    function ch() {
+        $("#out").html("A typing");
+    }
+
+    function ch1() {
+        $("#out").html("B typing");
+    }
+
+    function blur() {
+        $("#out").html("outside typing");
+    }
+
+    function focus() {
+        $("#out").html("You are selected in A text");
+    }
+
+    function focus1() {
+        $("#out").html("You are selected in B text");
+    }
+
+
+    function add() {
+        var c = Number($("#a").val()) + Number($("#b").val())
+        $("#out").html("Total ->" + c);
+    }
+</script>
+
+</html>
